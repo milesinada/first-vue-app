@@ -6,11 +6,13 @@
           name="Miles Inada"
           phone-number="8083469737"
           email-address="milesinada219@gmail.com"
+          is-favorite="1"
         ></friend-contact>
         <friend-contact
           name="Mariah Inada"
           phone-number="8083464953"
           email-address="mariahinada219@gmail.com"
+          is-favorite="0"
         ></friend-contact>
       </ul>
   </section>
