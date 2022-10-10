@@ -2,8 +2,16 @@
   <section>
     <header><h1>Heyo buddies</h1></header>
       <ul>
-        <friend-contact></friend-contact>
-        <friend-contact></friend-contact>
+        <friend-contact
+          name="Miles Inada"
+          phone-number="8083469737"
+          email-address="milesinada219@gmail.com"
+        ></friend-contact>
+        <friend-contact
+          name="Mariah Inada"
+          phone-number="8083464953"
+          email-address="mariahinada219@gmail.com"
+        ></friend-contact>
       </ul>
   </section>
 
