@@ -3,16 +3,14 @@
     <header><h1>Heyo buddies</h1></header>
       <ul>
         <friend-contact
-          name="Miles Inada"
-          phone-number="8083469737"
-          email-address="milesinada219@gmail.com"
-          is-favorite="1"
-        ></friend-contact>
-        <friend-contact
-          name="Mariah Inada"
-          phone-number="8083464953"
-          email-address="mariahinada219@gmail.com"
-          is-favorite="0"
+          v-for="friend in friends"
+          :key="friend.id"
+          :id="friend.id"
+          :name="friend.name"
+          :phone-number="friend.phone"
+          :email-address="friend.email"
+          :is-favorite="friend.isFavorite"
+          @toggle-favorite="toggleFavoriteStatus"
         ></friend-contact>
       </ul>
   </section>
@@ -29,22 +27,32 @@ export default{
                     id: "miles",
                     name: "Miles Inada",
                     phone: "8083469737",
-                    email: "milesinada219@gmail.com"
+                    email: "milesinada219@gmail.com",
+                    isFavorite: true
                 },
                 {
                     id: "mariah",
                     name: "Mariah Inada",
                     phone: "8083464953",
-                    email: "mariahinada219@gmail.com"
+                    email: "mariahinada219@gmail.com",
+                    isFavorite: false
+
                 },
                 {
                     id: "lychee",
                     name: "lychee Inada",
                     phone: "8083461175",
-                    email: "lychee219@gmail.com"
+                    email: "lychee219@gmail.com",
+                    isFavorite: true
                 },
             ]
         };
+    },
+    methods: {
+      toggleFavoriteStatus(friendId){
+        const idetifiedFriend = this.friends.find(friend => friend.id === friendId);
+        idetifiedFriend.isFavorite = !idetifiedFriend.isFavorite
+      }
     },
     components: { FriendContact }
 }
